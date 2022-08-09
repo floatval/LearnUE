@@ -1,3 +1,12 @@
-# Lyra
+# Lyra 通用流程学习目标
+1. 从零开始，把项目中基础的架构、API 等 英语 -》 中文
+2. 画出重要部分的类图、时序图
+3. 弄清楚游戏世界的初始化流程
 
-Developed with Unreal Engine 5
+# 项目目标
+1. 熟悉 UE5 Game Framework
+2. 熟悉 Plugin 设计理念
+3. 熟悉 Experience 设计理念
+4. 熟悉 技能系统
+5. 熟悉 Actor 间通信系统
+6. 熟悉 UE 蓝图和 C++ 代码各自负责的开发领域
