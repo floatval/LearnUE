@@ -28,6 +28,7 @@ public:
  * ULyraPawnComponent
  *
  *	An actor component that can be used for adding custom behavior to pawns.
+ *	一个可以被用来添加自定义行为的角色组件。
  */
 UCLASS(Blueprintable, Meta = (BlueprintSpawnableComponent))
 class LYRAGAME_API ULyraPawnComponent : public UPawnComponent, public ILyraReadyInterface

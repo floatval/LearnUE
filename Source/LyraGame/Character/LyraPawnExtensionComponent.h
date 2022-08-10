@@ -19,6 +19,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE(FLyraDynamicMulticastDelegate);
  * ULyraPawnExtensionComponent
  *
  *	Component used to add functionality to all Pawn classes.
+ *	用来为所有的Pawn类添加功能的组件
  */
 UCLASS()
 class ULyraPawnExtensionComponent : public ULyraPawnComponent

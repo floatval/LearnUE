@@ -17,6 +17,7 @@ class UAbilitySystemComponent;
  * ALyraGameState
  *
  *	The base game state class used by this project.
+ *	这个项目使用的游戏状态类的基类
  */
 UCLASS(Config = Game)
 class LYRAGAME_API ALyraGameState : public AModularGameStateBase, public IAbilitySystemInterface
@@ -49,11 +50,15 @@ public:
 
 	// Send a message that all clients will (probably) get
 	// (use only for client notifications like eliminations, server join messages, etc... that can handle being lost)
+	// 发送一个全部客户端都会（可能）收到的消息
+	// （用于客户端通知，例如消灭，服务器加入消息，等等，可以处理丢失）
 	UFUNCTION(NetMulticast, Unreliable, BlueprintCallable, Category = "Lyra|GameState")
 	void MulticastMessageToClients(const FLyraVerbMessage Message);
 
 	// Send a message that all clients will be guaranteed to get
 	// (use only for client notifications that cannot handle being lost)
+	// 发送一个全部客户端都会获得的消息
+	// （用于客户端通知，例如消灭，服务器加入消息，等等，不能处理丢失）
 	UFUNCTION(NetMulticast, Reliable, BlueprintCallable, Category = "Lyra|GameState")
 	void MulticastReliableMessageToClients(const FLyraVerbMessage Message);
 

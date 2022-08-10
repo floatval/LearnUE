@@ -20,6 +20,7 @@ class ULyraInputConfig;
  * ULyraHeroComponent
  *
  *	A component used to create a player controlled pawns (characters, vehicles, etc..).
+ *	一个用来创建玩家控制的 pawns 的组件
  */
 UCLASS(Blueprintable, Meta=(BlueprintSpawnableComponent))
 class ULyraHeroComponent : public ULyraPawnComponent
@@ -41,9 +42,11 @@ public:
 	void RemoveAdditionalInputConfig(const ULyraInputConfig* InputConfig);
 
 	/** True if this has completed OnPawnReadyToInitialize so is prepared for late-added features */
+	/** 如果 OnPawnReadyToInitialize 已经完成，则返回 true */
 	bool HasPawnInitialized() const;
 
 	/** True if this player has sent the BindInputsNow event and is prepared for bindings */
+	/** 如果玩家已经发送 BindInputsNow 事件并且准备绑定了，则返回 true */
 	bool IsReadyToBindInputs() const;
 
 	static const FName NAME_BindInputsNow;
@@ -78,22 +81,31 @@ protected:
 
 	/**
 	 * Input Configs that should be added to this player when initalizing the input.
+	 * 当初始化输入时，应该添加到玩家的输入配置
 	 * 
 	 * NOTE: You should only add to this if you do not have a game feature plugin accessible to you.
-	 * If you do, then use the GameFeatureAction_AddInputConfig instead. 
+	 * 注意：如果你没有一个可以访问的游戏特性插件，那么你应该只添加到这里
+	 * 
+	 * If you do, then use the GameFeatureAction_AddInputConfig instead.
+	 * 如果你有一个可以访问的插件的话，那么使用 GameFeatureAction_AddInputConfig
 	 */
+
 	UPROPERTY(EditAnywhere)
 	TArray<FMappableConfigPair> DefaultInputConfigs;
 	
 	// Camera mode set by an ability.
+	// 技能设置的相机模式
 	TSubclassOf<ULyraCameraMode> AbilityCameraMode;
 
 	// Spec handle for the last ability to set a camera mode.
+	// 最后一个设置相机模式的技能的 spec handle
 	FGameplayAbilitySpecHandle AbilityCameraModeOwningSpecHandle;
 
 	// True when the pawn has fully finished initialization
+	// 当 pawn 已经完成初始化时，返回 true
 	bool bPawnHasInitialized;
 
 	// True when player input bindings have been applyed, will never be true for non-players
+	// 当玩家输入绑定已经应用的时候，返回 True，对于非玩家永远不会返回 True
 	bool bReadyToBindInputs;
 };

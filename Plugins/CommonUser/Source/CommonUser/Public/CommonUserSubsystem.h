@@ -173,8 +173,11 @@ struct COMMONUSER_API FCommonUserInitializeParams
 
 /**
  * Game subsystem that handles queries and changes to user identity and login status.
+ * 用来处理查询和更改用户标识和登录状态的游戏子系统。
  * One subsystem is created for each game instance and can be accessed from blueprints or C++ code.
+ * 为每个游戏创建一个子系统，可以从蓝图或C++代码访问它。
  * If a game-specific subclass exists, this base subsystem will not be created.
+ * 如果有游戏特定的子类，则此基础子系统不会被创建。
  */
 UCLASS(BlueprintType, Config=Game)
 class COMMONUSER_API UCommonUserSubsystem : public UGameInstanceSubsystem

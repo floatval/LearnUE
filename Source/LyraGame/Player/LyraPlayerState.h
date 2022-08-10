@@ -39,6 +39,7 @@ enum class ELyraPlayerConnectionType : uint8
  * ALyraPlayerState
  *
  *	Base player state class used by this project.
+ *	Lyra 项目使用的玩家状态的基类
  */
 UCLASS(Config = Game)
 class LYRAGAME_API ALyraPlayerState : public AModularPlayerState, public IAbilitySystemInterface, public ILyraTeamAgentInterface
@@ -85,6 +86,7 @@ public:
 	ELyraPlayerConnectionType GetPlayerConnectionType() const { return MyPlayerConnectionType; }
 
 	/** Returns the Squad ID of the squad the player belongs to. */
+	/** 返回玩家所属战队的战队 Id。 */
 	UFUNCTION(BlueprintCallable)
 	int32 GetSquadId() const
 	{
@@ -92,6 +94,7 @@ public:
 	}
 
 	/** Returns the Team ID of the team the player belongs to. */
+	/** 返回玩家所属队伍的队伍 Id。 */
 	UFUNCTION(BlueprintCallable)
 	int32 GetTeamId() const
 	{
@@ -101,23 +104,28 @@ public:
 	void SetSquadID(int32 NewSquadID);
 
 	// Adds a specified number of stacks to the tag (does nothing if StackCount is below 1)
+	// 为标签添加一个特定数量的栈 (如果 StackCount 为 1 以下，则不执行任何操作)
 	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly, Category=Teams)
 	void AddStatTagStack(FGameplayTag Tag, int32 StackCount);
 
 	// Removes a specified number of stacks from the tag (does nothing if StackCount is below 1)
+	// 从标签中移除一个特定数量的栈 (如果 StackCount 为 1 以下，则不执行任何操作)
 	UFUNCTION(BlueprintCallable, BlueprintAuthorityOnly, Category=Teams)
 	void RemoveStatTagStack(FGameplayTag Tag, int32 StackCount);
 
 	// Returns the stack count of the specified tag (or 0 if the tag is not present)
+	// 返回指定标签的栈数 (如果标签不存在，则返回 0)
 	UFUNCTION(BlueprintCallable, Category=Teams)
 	int32 GetStatTagStackCount(FGameplayTag Tag) const;
 
 	// Returns true if there is at least one stack of the specified tag
+	// 返回是否存在指定标签的栈 - 至少有一个栈存在，则返回 true
 	UFUNCTION(BlueprintCallable, Category=Teams)
 	bool HasStatTag(FGameplayTag Tag) const;
 
 	// Send a message to just this player
 	// (use only for client notifications like accolades, quest toasts, etc... that can handle being occasionally lost)
+	// 发送一条消息给此玩家 (仅用于客户端通知，例如成就，任务提示等...)，可能会丢失
 	UFUNCTION(Client, Unreliable, BlueprintCallable, Category = "Lyra|PlayerState")
 	void ClientBroadcastMessage(const FLyraVerbMessage Message);
 
@@ -136,6 +144,7 @@ protected:
 private:
 
 	// The ability system component sub-object used by player characters.
+	// 技能系统组件子对象，用于玩家角色。
 	UPROPERTY(VisibleAnywhere, Category = "Lyra|PlayerState")
 	ULyraAbilitySystemComponent* AbilitySystemComponent;
 

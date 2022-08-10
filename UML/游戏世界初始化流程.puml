@@ -1,0 +1,87 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+alt 世界初始化
+    UGameInstance -> UWorld : Initialize()
+    note left
+    初始化有不同的入口
+    比如 PIE,RPC等
+    end note
+
+    UWorld -> UWorld : InitWorld()
+    UWorld -> UWorld : InitializeSubsystems()
+    UWorld -> FSubsystemCollection : Initialize()
+
+    note left
+    3. Subsystems 中使用
+    反射将所有 UWorldSubsystem
+    的类型的子类添加到子系统
+    集合中并进行初始化
+    初始化后添加到全局子系统集合中
+    end note
+    FSubsystemCollection -> UWorld : 全局子系统初始化完成
+    UWorld -> UWorld : 后续初始化
+end
+
+
+alt 游戏初始化
+UGameInstance -> ULyraGameInstance : Init()
+ULyraGameInstance -> UCommonGameInstance : 完成初始化
+UCommonGameInstance -> UGameInstance : 完成初始化
+UGameInstance -> FSubsystemCollection : 初始化游戏实例组件
+note left
+10. 同 3. 采用反射
+不过这个地方的基类
+是 GameInstanceSubsystem
+end note
+FSubsystemCollection -> UGameInstance : 初始化子系统完成
+UGameInstance -> UWorld : Init()
+UWorld -> UWorld : SetGameMode()
+UWorld -> ALyraGameMode : 创建 ALyraGameMode
+ALyraGameMode -> UWorld : 创建完成
+UWorld -> ALyraGameMode : InitializeActorsForPlay()
+ALyraGameMode -> ALyraGameMode : InitGame()
+ALyraGameMode -> UWorld : 游戏模式初始化完成
+UWorld -> ULevel: 初始化关卡内的 Actor
+ULevel -> AGameModeBase: RouteActorInitialize()
+AGameModeBase -> AGameModeBase : PreInitializeComponents()
+AGameModeBase -> UWorld : 构造 ALyraGameState
+UWorld -> AActor : PostSpawnInitialize()
+AActor -> AActor : FinishSpawning()
+AActor -> ALyraGameState : ALyraGameState组件前初始化
+ALyraGameState -> AActor : 前初始化完成
+AActor -> AActor : PostActorConstruction()
+AActor -> ALyraGameState : 进行后初始化
+ALyraGameState -> UGameInstance : 初始化完成
+end
+
+
+
+
+
+
+alt 游戏实例初始化
+ULyraGameInstance -> UCommonGameInstance : Init()
+FSubsystemCollection -> ALyraGameInstance : Init()
+ULyraGameInstance -> UCommonGameInstance: Init()
+UCommonGameInstance -> UGameInstance : Init()
+UGameInstance -> FSubsystemCollection : Initialize()
+FSubsystemCollection -> FSubsystemCollection : AddAndInitializeSubsystem()
+FSubsystemCollection -> UCommonUserSubsystem : Initialize()
+
+
+ALyraGameState -> ALyraGameState: PreInitializeComponents()
+ALyraGameState <-- ALyraGameState: PostInitializeComponents()
+
+ALyraGameMode -> ALyraWorldSettings: GetDefaultGameplayExperience()
+ULyraExperienceManagerComponent -> ULyraExperienceManagerComponent: OnExperienceLoadComplete()
+
+ULyraHeroComponent -> ULyraHeroComponent: OnRegister()
+
+ALyraCharacter -> ULyraPawnExtensionComponent : SetupPlayerInputComponent()
+ULyraPawnExtensionComponent -> ULyraPawnExtensionComponent : CheckPawnReadyToInitialize()
+ULyraPawnExtensionComponent -> ULyraHeroComponent : OnPawnReadyToInitialize()
+end
+
+@enduml

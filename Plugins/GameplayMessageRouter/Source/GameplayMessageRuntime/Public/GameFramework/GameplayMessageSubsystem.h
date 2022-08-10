@@ -11,6 +11,7 @@
 
 #include "GameplayMessageSubsystem.generated.h"
 
+class UGameplayMessageSubsystem;
 GAMEPLAYMESSAGERUNTIME_API DECLARE_LOG_CATEGORY_EXTERN(LogGameplayMessageSubsystem, Log, All);
 
 class UAsyncAction_ListenForGameplayMessage;
