@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+alt 游戏模式的初始化
+ALyraGameMode -> ALyraGameMode : InitGame()
+UGameInstance -> UWorld : StartPlayInEditorGameInstance()
+UWorld -> ULevel: RoteActorInitialize()
+ULevel -> AGameModeBase : PreInitializeComponents()
+UWorld -> ALyraGameState : 内部构造这个对象
+AActor -> AActor : PostSpawnInitialize()
+AActor -> AActor : FinishSpawning()
+AActor -> ALyraGameState : PostActorConstruction()
+ALyraGameState -> ALyraGameState : PreInitializeComponents()
+ALyraGameState -> AGameModeBase : 完成游戏状态的组件初始化
+AGameModeBase -> ALyraGameMode : PreInitializeComponents()
+end
+
+autonumber
+alt 游戏体验的加载
+UWorld -> FTimerManager : Tick()
+FTimerManager -> ALyraGameMode : 调用绑定的委托
+ALyraGameMode -> ALyraGameMode : HandleMatchAssignmentIfNotExpectingOne()
+ALyraGameMode -> ULyraExperienceManagerComponent: OnMatchAssignmentGiven()
+ULyraExperienceManagerComponent -> ULyraExperienceManagerComponent : ServerSetCurrentExperience()
+ULyraExperienceManagerComponent -> ALyraGameMode : OnExperienceLoadCompleted() PS: 同时加载游戏特性插件
+ALyraGameMode -> ALyraGameMode : OnExperienceLoaded()
+end
+
+@enduml

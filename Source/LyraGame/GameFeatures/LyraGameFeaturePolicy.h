@@ -16,7 +16,9 @@ class UGameFeatureData;
 
 /**
  * Manager to keep track of the state machines that bring a game feature plugin into memory and active
+ * 管理器，保持对携带了游戏特性且加载到内存中的，已激活的状态机的追踪
  * This class discovers plugins either that are built-in and distributed with the game or are reported externally (i.e. by a web service or other endpoint)
+ * 这个类可以发现：游戏内置的插件和独立于游戏的插件或是通过web服务或其他端点报告的插件
  */
 UCLASS(MinimalAPI, Config = Game)
 class ULyraGameFeaturePolicy : public UDefaultGameFeaturesProjectPolicies

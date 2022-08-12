@@ -1,0 +1,770 @@
+<project>
+  <files
+    portability_mode="relative"
+    default_encoding="System"
+    readonly="false"
+    maxfilesize="10485760"
+    enforce_portability="false">
+    <dir
+      name=".">
+      <dir
+        name="Config">
+        <dir
+          name="Android"/>
+        <dir
+          name="Custom">
+          <dir
+            name="EOS"/>
+        </dir>
+        <dir
+          name="IOS"/>
+        <dir
+          name="Linux"/>
+        <dir
+          name="Localization"/>
+        <dir
+          name="Mac"/>
+        <dir
+          name="Windows">
+          <dir
+            name="Custom">
+            <dir
+              name="EOS"/>
+          </dir>
+        </dir>
+      </dir>
+      <dir
+        name="Plugins">
+        <dir
+          name="AsyncMixin">
+          <dir
+            name="Source">
+            <dir
+              name="Private"/>
+            <dir
+              name="Public"/>
+          </dir>
+        </dir>
+        <dir
+          name="CommonGame">
+          <dir
+            name="Source">
+            <dir
+              name="Private">
+              <dir
+                name="Actions"/>
+              <dir
+                name="Messaging"/>
+            </dir>
+            <dir
+              name="Public">
+              <dir
+                name="Actions"/>
+              <dir
+                name="Messaging"/>
+            </dir>
+          </dir>
+        </dir>
+        <dir
+          name="CommonLoadingScreen">
+          <dir
+            name="Resources"/>
+          <dir
+            name="Source">
+            <dir
+              name="CommonLoadingScreen">
+              <dir
+                name="Private"/>
+              <dir
+                name="Public"/>
+            </dir>
+            <dir
+              name="CommonStartupLoadingScreen">
+              <dir
+                name="Private"/>
+            </dir>
+          </dir>
+        </dir>
+        <dir
+          name="CommonUser">
+          <dir
+            name="Resources"/>
+          <dir
+            name="Source">
+            <dir
+              name="CommonUser">
+              <dir
+                name="Private"/>
+              <dir
+                name="Public"/>
+            </dir>
+          </dir>
+        </dir>
+        <dir
+          name="GameFeatures">
+          <dir
+            name="ShooterCore">
+            <dir
+              name="Config">
+              <dir
+                name="Tags"/>
+            </dir>
+            <dir
+              name="Resources"/>
+            <dir
+              name="Source">
+              <dir
+                name="ShooterCoreRuntime">
+                <dir
+                  name="Private">
+                  <dir
+                    name="Accolades"/>
+                  <dir
+                    name="Input"/>
+                  <dir
+                    name="MessageProcessors"/>
+                </dir>
+                <dir
+                  name="Public">
+                  <dir
+                    name="Accolades"/>
+                  <dir
+                    name="Input"/>
+                  <dir
+                    name="MessageProcessors"/>
+                  <dir
+                    name="Messages"/>
+                </dir>
+              </dir>
+            </dir>
+          </dir>
+          <dir
+            name="ShooterMaps">
+            <dir
+              name="Resources"/>
+          </dir>
+          <dir
+            name="TopDownArena">
+            <dir
+              name="Config">
+              <dir
+                name="Tags"/>
+            </dir>
+            <dir
+              name="Resources"/>
+            <dir
+              name="Source">
+              <dir
+                name="TopDownArenaRuntime">
+                <dir
+                  name="Private"/>
+                <dir
+                  name="Public"/>
+              </dir>
+            </dir>
+          </dir>
+        </dir>
+        <dir
+          name="GameSettings">
+          <dir
+            name="Source">
+            <dir
+              name="Private">
+              <dir
+                name="DataSource"/>
+              <dir
+                name="EditCondition"/>
+              <dir
+                name="Registry"/>
+              <dir
+                name="Widgets">
+                <dir
+                  name="Misc"/>
+                <dir
+                  name="Responsive"/>
+              </dir>
+            </dir>
+            <dir
+              name="Public">
+              <dir
+                name="DataSource"/>
+              <dir
+                name="EditCondition"/>
+              <dir
+                name="Widgets">
+                <dir
+                  name="Misc"/>
+              </dir>
+            </dir>
+          </dir>
+        </dir>
+        <dir
+          name="GameSubtitles">
+          <dir
+            name="Config">
+            <dir
+              name="Tags"/>
+          </dir>
+          <dir
+            name="Source">
+            <dir
+              name="Private">
+              <dir
+                name="Players"/>
+              <dir
+                name="Widgets"/>
+            </dir>
+            <dir
+              name="Public">
+              <dir
+                name="Players"/>
+              <dir
+                name="Widgets"/>
+            </dir>
+          </dir>
+        </dir>
+        <dir
+          name="GameplayMessageRouter">
+          <dir
+            name="Source">
+            <dir
+              name="GameplayMessageNodes">
+              <dir
+                name="Private"/>
+              <dir
+                name="Public"/>
+            </dir>
+            <dir
+              name="GameplayMessageRuntime">
+              <dir
+                name="Private">
+                <dir
+                  name="GameFramework"/>
+              </dir>
+              <dir
+                name="Public">
+                <dir
+                  name="GameFramework"/>
+              </dir>
+            </dir>
+          </dir>
+        </dir>
+        <dir
+          name="LyraExampleContent"/>
+        <dir
+          name="LyraExtTool">
+          <dir
+            name="Resources"/>
+          <dir
+            name="Source">
+            <dir
+              name="LyraExtTool">
+              <dir
+                name="Private"/>
+              <dir
+                name="Public"/>
+            </dir>
+          </dir>
+        </dir>
+        <dir
+          name="ModularGameplayActors">
+          <dir
+            name="Source">
+            <dir
+              name="ModularGameplayActors">
+              <dir
+                name="Private"/>
+              <dir
+                name="Public"/>
+            </dir>
+          </dir>
+        </dir>
+        <dir
+          name="PocketWorlds">
+          <dir
+            name="Source">
+            <dir
+              name="Private"/>
+            <dir
+              name="Public"/>
+          </dir>
+        </dir>
+        <dir
+          name="UIExtension">
+          <dir
+            name="Source">
+            <dir
+              name="Private">
+              <dir
+                name="Widgets"/>
+            </dir>
+            <dir
+              name="Public">
+              <dir
+                name="Widgets"/>
+            </dir>
+          </dir>
+        </dir>
+      </dir>
+      <dir
+        name="Source">
+        <dir
+          name="LyraEditor">
+          <dir
+            name="Commandlets"/>
+          <dir
+            name="Private"/>
+          <dir
+            name="Utilities"/>
+          <dir
+            name="Validation"/>
+        </dir>
+        <dir
+          name="LyraGame">
+          <dir
+            name="AbilitySystem">
+            <dir
+              name="Abilities"/>
+            <dir
+              name="Attributes"/>
+            <dir
+              name="Executions"/>
+            <dir
+              name="Phases"/>
+          </dir>
+          <dir
+            name="Animation"/>
+          <dir
+            name="Audio"/>
+          <dir
+            name="Camera"/>
+          <dir
+            name="Character"/>
+          <dir
+            name="Cosmetics"/>
+          <dir
+            name="Development"/>
+          <dir
+            name="Equipment"/>
+          <dir
+            name="Feedback">
+            <dir
+              name="ContextEffects"/>
+            <dir
+              name="NumberPops"/>
+          </dir>
+          <dir
+            name="GameFeatures"/>
+          <dir
+            name="GameModes"/>
+          <dir
+            name="Hotfix"/>
+          <dir
+            name="Input"/>
+          <dir
+            name="Interaction">
+            <dir
+              name="Abilities"/>
+            <dir
+              name="Tasks"/>
+          </dir>
+          <dir
+            name="Inventory"/>
+          <dir
+            name="Messages"/>
+          <dir
+            name="Performance"/>
+          <dir
+            name="Physics"/>
+          <dir
+            name="Player"/>
+          <dir
+            name="Replays"/>
+          <dir
+            name="Settings">
+            <dir
+              name="CustomSettings"/>
+            <dir
+              name="Screens"/>
+            <dir
+              name="Widgets"/>
+          </dir>
+          <dir
+            name="System"/>
+          <dir
+            name="Teams"/>
+          <dir
+            name="Tests"/>
+          <dir
+            name="UI">
+            <dir
+              name="Basic"/>
+            <dir
+              name="Common"/>
+            <dir
+              name="Foundation"/>
+            <dir
+              name="Frontend"/>
+            <dir
+              name="IndicatorSystem"/>
+            <dir
+              name="PerformanceStats"/>
+            <dir
+              name="Subsystem"/>
+            <dir
+              name="Weapons"/>
+          </dir>
+          <dir
+            name="Weapons"/>
+        </dir>
+      </dir>
+    </dir>
+  </files>
+  <languages>
+    <language
+      name="C++"/>
+    <language
+      name="C#"/>
+    <language
+      name="Web"/>
+  </languages>
+  <file_types/>
+  <annotations_options/>
+  <comparison_options
+    comparison_db=""
+    git_repo=""
+    git_commit=""/>
+  <cpp_options
+    add_found_include_files="false"
+    add_found_system_include_files="false"
+    allow_nested_comments="false"
+    bracket_depth="256"
+    cache_ast_files="false"
+    c_std=""
+    compiler="Microsoft Visual C++"
+    compiler_include_path=""
+    create_implicit_special_member_functions="false"
+    create_references_in_assembly="true"
+    create_references_in_inactive_code="true"
+    create_references_to_local_objects="true"
+    create_references_to_macros_during_macro_expansion="false"
+    create_references_to_parameters="true"
+    cxx_std=""
+    delayed_template_parsing="true"
+    triple=""
+    ignore_dir_in_include_files="false"
+    ignore_preprocessor_conditionals="false"
+    ios_min_version="5.0"
+    linkage_append_text=""
+    linkage_prepend_text=""
+    macos_min_version="10.7"
+    macro_expansion_truncation="1000"
+    msc_version=""
+    prompt_for_missing_include_files="false"
+    objectDataMembers="false"
+    objectFunctionMembers="false"
+    save_comments_associated_with_entities="true"
+    save_duplicate_references="false"
+    save_macro_expansion_text="false"
+    simplify_macro_expansion="false"
+    search_for_include_files_among_project_files="true"
+    start_worker_processes_serially="false"
+    sysroot=""
+    treat_system_includes_as_user_includes="true"
+    use_case_insensitive_lookup_for_includes="false"
+    compare_includes_by_content="false"
+    analyze_headers_in_isolation="true"
+    use_clang="true"
+    use_include_cache="true"
+    merge_multiple_function_definitions="false"
+    warning_level="NoWarnings"
+    objc_memory_mode="MrrMode"
+    worker_process_timeout="2">
+    <includes>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/ThirdParty/WebRTC/4147/Include/third_party/libsrtp/crypto/include"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/ThirdParty/WebRTC/4147/Include/rtc_base/third_party/base64"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/ThirdParty/WebRTC/4147/Include/modules/rtp_rtcp/source/rtcp_packet"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/ThirdParty/WebRTC/4147/Include/modules/audio_coding/audio_network_adaptor"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/ThirdParty/WebRTC/4147/Include/base"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/ThirdParty/Unix/LibCxx/include/c++/v1/__algorithm"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/ThirdParty/rpclib/Source/include/rpc/msgpack"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/ThirdParty/Python3/Win64/include/cpython"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/ThirdParty/Python3/Win64/include"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/ThirdParty/PhysX3/APEX_1.4/include"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/ThirdParty/Perforce/p4api-2021.2/Include/Win64/VS2015/p4"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/ThirdParty/OpenVDB/Deploy/openvdb-8.1.0/include/openvdb/math"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/ThirdParty/OpenSubdiv/Deploy/OpenSubdiv-3.4.4/include/opensubdiv/vtr"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/ThirdParty/OpenSSL/1.1.1k/include/Win64/VS2015/openssl"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/ThirdParty/OpenSSL/1.1.1k/include/Mac/openssl"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/ThirdParty/OpenSSL/1.1.1k/include/IOS/openssl"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/ThirdParty/OpenSSL/1.1.1k/include/Android/openssl"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/ThirdParty/OpenSSL/1.1.1c/include/Unix/x86_64-unknown-linux-gnu/openssl"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/ThirdParty/OpenSSL/1.1.1c/include/Unix/aarch64-unknown-linux-gnueabi/openssl"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/ThirdParty/nvTextureTools/nvTextureTools-2.0.8/src/src/nvimage"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/ThirdParty/glslang/glslang/src/glslang_lib/glslang/MachineIndependent"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/ThirdParty/Eigen/Eigen/src/misc"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/ThirdParty/Eigen/Eigen/src/Geometry"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/ThirdParty/Android/libunwind/libunwind/include/tdep-ia64"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/ThirdParty/AMD/Amf/core"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/UMG/Public/Editor"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/UMG/Public/Components"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/UMG/Public/Blueprint"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/UMG/Public/Animation"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/SlateCore/Public/Widgets"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/SlateCore/Public/Styling"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/SlateCore/Public/Rendering"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/SlateCore/Public/Layout"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/SlateCore/Public/Input"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/SlateCore/Public/Fonts"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/SlateCore/Public/Animation"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/SlateCore/Public"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Slate/Public/Widgets/Text"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Slate/Public/Widgets/Notifications"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Slate/Public/Widgets/Layout"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Slate/Public/Widgets/Images"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Slate/Public/Widgets"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Slate/Public/Framework/Text"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Slate/Public/Framework/Notifications"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Slate/Public/Framework/Commands"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Slate/Public/Framework/Application"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Slate/Public"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/RHI/Public"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/RenderCore/Public"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/PropertyPath/Public"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Projects/Public/Interfaces"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/PhysicsCore/Public/PhysicalMaterials"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Online/HTTP/Public/Interfaces"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Online/BuildPatchServices/Private/Core"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/NetworkReplayStreaming/NetworkReplayStreaming/Public"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Net/Core/Classes/Net/Serialization"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Json/Public/Serialization"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/GameplayTasks/Public"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/GameplayTags/Public"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/GameplayTags/Classes"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Experimental/Chaos/Public/Chaos"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Engine/Public/Subsystems"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Engine/Public/Slate"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Engine/Public/Net"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Engine/Public"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/Sound"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/PhysicsEngine"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/Materials"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/Kismet"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/GameFramework"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/Engine"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/EdGraph"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/DeviceProfiles"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/Curves"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/Components"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/Commandlets"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/Camera"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/Animation/AnimNotifies"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/Animation"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/DeveloperSettings/Public/Engine"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Datasmith/CADKernel/Public/CADKernel/UI"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Datasmith/CADKernel/Private/CADKernel/Core"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/CoreUObject/Public/UObject"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/CoreUObject/Public/Templates"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/CoreUObject/Public/Misc"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/CoreUObject/Public/Blueprint"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/CoreUObject/Public/AssetRegistry"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/CoreUObject/Public"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Core/Public/UObject"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Core/Public/Templates"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Core/Public/Stats"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Core/Public/ProfilingDebugging"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Core/Public/Modules"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Core/Public/Misc"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Core/Public/Math"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Core/Public/Logging"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Core/Public/Internationalization"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Core/Public/HAL"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Core/Public/Delegates"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Core/Public/Containers"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Core/Public/Async"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Core/Public/Algo"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Core/Public"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/BinkAudioDecoder/SDK/BinkAudio/Src"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/AudioMixerCore/Public"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/AudioMixer/Public"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/AssetRegistry/Public/AssetRegistry"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/AssetRegistry/Public"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/ApplicationCore/Public/HAL"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Analytics/AnalyticsET/Public"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Editor/UnrealEd/Public/Kismet2"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Editor/UnrealEd/Public"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Editor/UnrealEd/Classes/Settings"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Editor/UnrealEd/Classes/Factories"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Editor/UnrealEd/Classes/Editor"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Editor/KismetCompiler/Public"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Editor/BlueprintGraph/Public"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Editor/BlueprintGraph/Classes"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Developer/TraceAnalysis/Private/Analysis"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Developer/ToolMenus/Public"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Developer/SourceControl/Public"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Developer/DeveloperToolSettings/Classes/Settings"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Developer/CollectionManager/Public"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Developer/AssetTools/Public"/>
+      <include
+        directory="./Intermediate/Build/Win64/UnrealEditor/Inc/LyraGame"/>
+      <include
+        directory="./Plugins/GameFeatures/ShooterCore/Intermediate/Build/Win64/UnrealEditor/Inc/ShooterCoreRuntime"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Plugins/Runtime/GameplayAbilities/Source/GameplayAbilities/Public/Abilities"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Plugins/Online/OnlineSubsystem/Source/Public"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Plugins/Online/Experimental/OnlineServices/Source/OnlineServicesInterface/Public/Online"/>
+      <include
+        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/Debug"/>
+    </includes>
+  </cpp_options>
+  <csharp_options
+    analyze_reference_dlls="true"
+    count_standard_in_max_inheritance="false"
+    locate_system_classes="UseDefaultFramework"
+    save_comments_associated_with_entities="true"/>
+  <imports>
+    <files>
+      <file
+        name="./Intermediate/ProjectFiles/Lyra.vcxproj"
+        configuration="DebugGame_Editor|x64"/>
+    </files>
+  </imports>
+  <web_options
+    add_found_imported_js_files="true"
+    allow_asp_style_php_tags="false"
+    allow_jquery="false"
+    allow_node_js="false"
+    allow_short_php_tags="true"
+    js_module_search_path=""
+    node_js_predefined_config_file="$CONF:/understand/javascript/nodejs_predefined.txt"
+    node_js_search_path=""
+    save_php_comments="true"
+    search_strings_for_entity_names="false"
+    php_version="5.3"/>
+</project>
