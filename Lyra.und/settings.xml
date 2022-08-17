@@ -437,7 +437,7 @@
   <cpp_options
     add_found_include_files="false"
     add_found_system_include_files="false"
-    allow_nested_comments="false"
+    allow_nested_comments="true"
     bracket_depth="256"
     cache_ast_files="false"
     c_std=""
@@ -452,7 +452,7 @@
     cxx_std=""
     delayed_template_parsing="true"
     triple=""
-    ignore_dir_in_include_files="false"
+    ignore_dir_in_include_files="true"
     ignore_preprocessor_conditionals="false"
     ios_min_version="5.0"
     linkage_append_text=""
@@ -474,7 +474,7 @@
     use_case_insensitive_lookup_for_includes="false"
     compare_includes_by_content="false"
     analyze_headers_in_isolation="true"
-    use_clang="true"
+    use_clang="false"
     use_include_cache="true"
     merge_multiple_function_definitions="false"
     warning_level="NoWarnings"
@@ -729,18 +729,6 @@
         directory="./../../Epic Games/UE_5.0/Engine/Source/Developer/CollectionManager/Public"/>
       <include
         directory="./../../Epic Games/UE_5.0/Engine/Source/Developer/AssetTools/Public"/>
-      <include
-        directory="./Intermediate/Build/Win64/UnrealEditor/Inc/LyraGame"/>
-      <include
-        directory="./Plugins/GameFeatures/ShooterCore/Intermediate/Build/Win64/UnrealEditor/Inc/ShooterCoreRuntime"/>
-      <include
-        directory="./../../Epic Games/UE_5.0/Engine/Plugins/Runtime/GameplayAbilities/Source/GameplayAbilities/Public/Abilities"/>
-      <include
-        directory="./../../Epic Games/UE_5.0/Engine/Plugins/Online/OnlineSubsystem/Source/Public"/>
-      <include
-        directory="./../../Epic Games/UE_5.0/Engine/Plugins/Online/Experimental/OnlineServices/Source/OnlineServicesInterface/Public/Online"/>
-      <include
-        directory="./../../Epic Games/UE_5.0/Engine/Source/Runtime/Engine/Classes/Debug"/>
     </includes>
   </cpp_options>
   <csharp_options
@@ -751,8 +739,8 @@
   <imports>
     <files>
       <file
-        name="./Intermediate/ProjectFiles/Lyra.vcxproj"
-        configuration="DebugGame_Editor|x64"/>
+        name="./Lyra.sln"
+        configuration="DebugGame Client|HoloLens"/>
     </files>
   </imports>
   <web_options

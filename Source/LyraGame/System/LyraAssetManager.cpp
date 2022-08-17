@@ -104,6 +104,7 @@ void ULyraAssetManager::StartInitialLoading()
 	SCOPED_BOOT_TIMING("ULyraAssetManager::StartInitialLoading");
 
 	// This does all of the scanning, need to do this now even if loads are deferred
+	// 做所有相关的扫描，即使资源延迟加载，也需要在这个地方进行扫描
 	Super::StartInitialLoading();
 
 	STARTUP_JOB(InitializeAbilitySystem());

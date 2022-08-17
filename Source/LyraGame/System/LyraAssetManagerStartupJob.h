@@ -8,6 +8,7 @@
 DECLARE_DELEGATE_OneParam(FLyraAssetManagerStartupJobSubstepProgress, float /*NewProgress*/);
 
 /** Handles reporting progress from streamable handles */
+/** 处理流加载的进度 */
 struct FLyraAssetManagerStartupJob
 {
 	FLyraAssetManagerStartupJobSubstepProgress SubstepProgressDelegate;
@@ -24,6 +25,7 @@ struct FLyraAssetManagerStartupJob
 	{}
 
 	/** Perform actual loading, will return a handle if it created one */
+	/** 执行实际的加载，如果创建了一个句柄就返回 */
 	TSharedPtr<FStreamableHandle> DoJob() const;
 
 	void UpdateSubstepProgress(float NewProgress) const

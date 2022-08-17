@@ -10,6 +10,7 @@ class UGameFeatureAction;
 
 /**
  * Definition of a set of actions to perform as part of entering an experience
+ * 定义一系列行为，作为进去体验的一部分
  */
 UCLASS(BlueprintType, NotBlueprintable)
 class ULyraExperienceActionSet : public UPrimaryDataAsset

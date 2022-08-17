@@ -35,6 +35,7 @@ ALyraGameMode::ALyraGameMode(const FObjectInitializer& ObjectInitializer)
 const ULyraPawnData* ALyraGameMode::GetPawnDataForController(const AController* InController) const
 {
 	// See if pawn data is already set on the player state
+	// 检查玩家状态是否已经设置了角色数据
 	if (InController != nullptr)
 	{
 		if (const ALyraPlayerState* LyraPS = InController->GetPlayerState<ALyraPlayerState>())
@@ -47,6 +48,7 @@ const ULyraPawnData* ALyraGameMode::GetPawnDataForController(const AController* 
 	}
 
 	// If not, fall back to the the default for the current experience
+	// 玩家状态没有设置角色数据，则使用当前体验的默认角色数据
 	check(GameState);
 	ULyraExperienceManagerComponent* ExperienceComponent = GameState->FindComponentByClass<ULyraExperienceManagerComponent>();
 	check(ExperienceComponent);
@@ -60,10 +62,12 @@ const ULyraPawnData* ALyraGameMode::GetPawnDataForController(const AController* 
 		}
 
 		// Experience is loaded and there's still no pawn data, fall back to the default for now
+		// 当前体验已经加载，但是没有角色数据，则使用默认角色数据
 		return ULyraAssetManager::Get().GetDefaultPawnData();
 	}
 
 	// Experience not loaded yet, so there is no pawn data to be had
+	// 当前体验没有加载，没有角色数据可用
 	return nullptr;
 }
 

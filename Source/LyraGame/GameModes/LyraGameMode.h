@@ -12,8 +12,10 @@ class ULyraExperienceDefinition;
 
 /**
  * Post login event, triggered when a player joins the game as well as after non-seamless ServerTravel
+ * Post login 事件，当玩家加入游戏时触发，以及在非无缝服务器旅行后被触发
  *
  * This is called after the player has finished initialization
+ * 在玩家初始化结束之后进行调用
  */
 DECLARE_MULTICAST_DELEGATE_TwoParams(FOnGameModeCombinedPostLogin, AGameModeBase* /*GameMode*/, AController* /*NewPlayer*/);
 
@@ -48,11 +50,14 @@ public:
 	FOnGameModeCombinedPostLogin& OnGameModeCombinedPostLogin() { return OnGameModeCombinedPostLoginDelegate; }
 
 	// Restart (respawn) the specified player or bot next frame
+	// 在下一帧重新启动指定的玩家或机器人
 	// - If bForceReset is true, the controller will be reset this frame (abandoning the currently possessed pawn, if any)
+	// - 如果bForceReset为true，则控制器将在这一帧重新启动(如果有被控制的角色，则放弃该角色)
 	UFUNCTION(BlueprintCallable)
 	void RequestPlayerRestartNextFrame(AController* Controller, bool bForceReset = false);
 
 	// Agnostic version of PlayerCanRestart that can be used for both player bots and players
+	// 跨平台的 PlayerCanRestart，可用于玩家和机器人
 	virtual bool ControllerCanRestart(AController* Controller);
 
 private:

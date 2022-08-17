@@ -68,36 +68,48 @@ void ULyraExperienceManagerComponent::ServerSetCurrentExperience(FPrimaryAssetId
 
 void ULyraExperienceManagerComponent::CallOrRegister_OnExperienceLoaded_HighPriority(FOnLyraExperienceLoaded::FDelegate&& Delegate)
 {
+	// 体验已经加载完成了，则执行注册的回调
 	if (IsExperienceLoaded())
 	{
+		// Debug 模式检查委托已经绑定，委托未绑定则抛出提示信息
+		checkf(Delegate.IsBound(), TEXT("CallOrRegister_OnExperienceLoaded_HighPriority delegate is not bound"));
 		Delegate.Execute(CurrentExperience);
 	}
 	else
 	{
+		// 体验没有加载完成，则注册回调到回调列表里面
 		OnExperienceLoaded_HighPriority.Add(MoveTemp(Delegate));
 	}
 }
 
 void ULyraExperienceManagerComponent::CallOrRegister_OnExperienceLoaded(FOnLyraExperienceLoaded::FDelegate&& Delegate)
 {
+	// 体验已经加载完成了，则执行注册的回调
 	if (IsExperienceLoaded())
 	{
+		// Debug 模式检查委托已经绑定，委托未绑定则抛出提示信息
+		checkf(Delegate.IsBound(), TEXT("CallOrRegister_OnExperienceLoaded delegate is not bound"));
 		Delegate.Execute(CurrentExperience);
 	}
 	else
 	{
+		// 体验没有加载完成，则注册回调到回调列表里面
 		OnExperienceLoaded.Add(MoveTemp(Delegate));
 	}
 }
 
 void ULyraExperienceManagerComponent::CallOrRegister_OnExperienceLoaded_LowPriority(FOnLyraExperienceLoaded::FDelegate&& Delegate)
 {
+	// 体验已经加载完成了，则执行注册的回调
 	if (IsExperienceLoaded())
 	{
+		// Debug 模式检查委托已经绑定，委托未绑定则抛出提示信息
+		checkf(Delegate.IsBound(), TEXT("CallOrRegister_OnExperienceLoaded_LowPriority delegate is not bound"));
 		Delegate.Execute(CurrentExperience);
 	}
 	else
 	{
+		// 体验没有加载完成，则注册回调到回调列表里面
 		OnExperienceLoaded_LowPriority.Add(MoveTemp(Delegate));
 	}
 }
@@ -211,6 +223,7 @@ void ULyraExperienceManagerComponent::OnExperienceLoadComplete()
 		*GetClientServerContextString(this));
 
 	// find the URLs for our GameFeaturePlugins - filtering out dupes and ones that don't have a valid mapping
+	// 为 GameFeaturePlugins 找到 URLs - 过滤掉重复的和无效的映射
 	GameFeaturePluginURLs.Reset();
 
 	auto CollectGameFeaturePluginURLs = [This=this](const UPrimaryDataAsset* Context, const TArray<FString>& FeaturePluginList)
