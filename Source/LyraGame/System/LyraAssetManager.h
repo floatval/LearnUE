@@ -73,6 +73,7 @@ protected:
 
 
 	static UObject* SynchronousLoadAsset(const FSoftObjectPath& AssetPath);
+	static UObject* AsynchronousLoadAsset(const FSoftObjectPath& AssetPath);
 	static bool ShouldLogAssetLoads();
 
 	// Thread safe way of adding a loaded asset to keep in memory.
@@ -147,7 +148,8 @@ AssetType* ULyraAssetManager::GetAsset(const TSoftObjectPtr<AssetType>& AssetPoi
 		LoadedAsset = AssetPointer.Get();
 		if (!LoadedAsset)
 		{
-			LoadedAsset = Cast<AssetType>(SynchronousLoadAsset(AssetPath));
+			LoadedAsset = Cast<AssetType>(SynchronousLoadAsset(AssetPath)); // todo:异步加载资源
+			//LoadedAsset = Cast<AssetType>(AsynchronousLoadAsset(AssetPath));
 			ensureAlwaysMsgf(LoadedAsset, TEXT("Failed to load asset [%s]"), *AssetPointer.ToString());
 		}
 
@@ -173,7 +175,8 @@ TSubclassOf<AssetType> ULyraAssetManager::GetSubclass(const TSoftClassPtr<AssetT
 		LoadedSubclass = AssetPointer.Get();
 		if (!LoadedSubclass)
 		{
-			LoadedSubclass = Cast<UClass>(SynchronousLoadAsset(AssetPath));
+			LoadedSubclass = Cast<UClass>(SynchronousLoadAsset(AssetPath));// todo：异步加载
+			//LoadedSubclass = Cast<UClass>(AsynchronousLoadAsset(AssetPath));
 			ensureAlwaysMsgf(LoadedSubclass, TEXT("Failed to load asset class [%s]"), *AssetPointer.ToString());
 		}
 

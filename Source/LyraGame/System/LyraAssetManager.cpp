@@ -63,9 +63,34 @@ UObject* ULyraAssetManager::SynchronousLoadAsset(const FSoftObjectPath& AssetPat
 		{
 			return UAssetManager::GetStreamableManager().LoadSynchronous(AssetPath, false);
 		}
-
 		// Use LoadObject if asset manager isn't ready yet.
 		return AssetPath.TryLoad();
+	}
+
+	return nullptr;
+}
+
+/**
+ * @brief 
+ * @param AssetPath 
+ * @return
+ * @todo : 实现异步加载资源
+ */
+UObject* ULyraAssetManager::AsynchronousLoadAsset(const FSoftObjectPath& AssetPath)
+{
+	if (AssetPath.IsValid())
+	{
+		TUniquePtr<FScopeLogTime> LogTimePtr;
+
+		// Use LoadObject if asset manager isn't ready yet.
+		if(UAssetManager::IsValid())
+		{
+			UAssetManager::GetStreamableManager().RequestAsyncLoad(AssetPath, FStreamableDelegate::CreateLambda([AssetPath]()
+			{
+				UE_LOG(LogTemp, Warning, TEXT("Asset %s loaded"), *AssetPath.GetAssetName());
+			}));
+		}
+
 	}
 
 	return nullptr;
@@ -226,6 +251,7 @@ void ULyraAssetManager::DoAllStartupJobs()
 				const float JobValue = StartupJob.JobWeight;
 				StartupJob.SubstepProgressDelegate.BindLambda([This = this, AccumulatedJobValue, JobValue, TotalJobValue](float NewProgress)
 					{
+						// 将每个子 job 的权重转换为 0-1 的进度
 						const float SubstepAdjustment = FMath::Clamp(NewProgress, 0.0f, 1.0f) * JobValue;
 						const float OverallPercentWithSubstep = (AccumulatedJobValue + SubstepAdjustment) / TotalJobValue;
 

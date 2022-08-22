@@ -14,6 +14,7 @@ void FLyraGameplayTags::InitializeNativeTags()
 	GameplayTags.AddAllTags(Manager);
 
 	// Notify manager that we are done adding native tags.
+	// 通知管理器，我们已经完成了本地标签的添加动作。
 	Manager.DoneAddingNativeTags();
 }
 
