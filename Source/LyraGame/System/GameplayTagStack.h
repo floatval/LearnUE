@@ -12,6 +12,7 @@ struct FGameplayTagStackContainer;
 
 /**
  * Represents one stack of a gameplay tag (tag + count)
+ * 一个游戏标签（标签 + 数量）的表现
  */
 USTRUCT(BlueprintType)
 struct FGameplayTagStack : public FFastArraySerializerItem
@@ -40,6 +41,7 @@ private:
 };
 
 /** Container of gameplay tag stacks */
+/** 游戏标签栈的容器 */
 USTRUCT(BlueprintType)
 struct FGameplayTagStackContainer : public FFastArraySerializer
 {
@@ -52,18 +54,22 @@ struct FGameplayTagStackContainer : public FFastArraySerializer
 
 public:
 	// Adds a specified number of stacks to the tag (does nothing if StackCount is below 1)
+	// 将指定数量的栈添加到标签（如果StackCount小于1，则不执行任何操作）
 	void AddStack(FGameplayTag Tag, int32 StackCount);
 
 	// Removes a specified number of stacks from the tag (does nothing if StackCount is below 1)
+	// 将指定数量的栈从标签中移除（如果StackCount小于1，则不执行任何操作）
 	void RemoveStack(FGameplayTag Tag, int32 StackCount);
 
 	// Returns the stack count of the specified tag (or 0 if the tag is not present)
+	// 返回指定标签的堆栈数量（如果标签不存在，则返回0）
 	int32 GetStackCount(FGameplayTag Tag) const
 	{
 		return TagToCountMap.FindRef(Tag);
 	}
 
 	// Returns true if there is at least one stack of the specified tag
+	// 如果存在至少一个指定标签的堆栈，则返回true
 	bool ContainsTag(FGameplayTag Tag) const
 	{
 		return TagToCountMap.Contains(Tag);

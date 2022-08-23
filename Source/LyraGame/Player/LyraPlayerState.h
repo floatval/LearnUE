@@ -19,19 +19,24 @@ class ULyraPawnData;
 class ULyraExperienceDefinition;
 
 /** Defines the types of client connected */
+/** 客户端连接类型的定义 */
 UENUM()
 enum class ELyraPlayerConnectionType : uint8
 {
 	// An active player
+	// 一个激活的玩家
 	Player = 0,
 
 	// Spectator connected to a running game
+	// 正在运行的游戏中的观察者
 	LiveSpectator,
 
 	// Spectating a demo recording offline
+	// 离线观看演示录像
 	ReplaySpectator,
 
 	// A deactivated player (disconnected)
+	// 未激活的玩家（断开连接）
 	InactivePlayer
 };
 

@@ -12,6 +12,7 @@ struct FWorldContext;
 
 /**
  * Base class for GameFeatureActions that wish to do something world specific.
+ * 特定于游戏世界的 GameFeatureActions 基类 
  */
 UCLASS(Abstract)
 class UGameFeatureAction_WorldActionBase : public UGameFeatureAction

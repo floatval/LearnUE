@@ -101,27 +101,37 @@ EDataValidationResult UGameFeatureAction_AddAbilities::IsDataValid(TArray<FText>
 
 void UGameFeatureAction_AddAbilities::AddToWorld(const FWorldContext& WorldContext, const FGameFeatureStateChangeContext& ChangeContext)
 {
-	UWorld* World = WorldContext.World();
-	UGameInstance* GameInstance = WorldContext.OwningGameInstance;
-	FPerContextData& ActiveData = ContextData.FindOrAdd(ChangeContext);
+	const UWorld* World = WorldContext.World();
+	const UGameInstance* GameInstance = WorldContext.OwningGameInstance;
 
-	if ((GameInstance != nullptr) && (World != nullptr) && World->IsGameWorld())
+	// 游戏实例为空、世界为空、世界不是游戏世界，则不进行处理，直接返回
+	if (GameInstance == nullptr
+		|| World == nullptr
+		|| !World->IsGameWorld())
 	{
-		if (UGameFrameworkComponentManager* ComponentMan = UGameInstance::GetSubsystem<UGameFrameworkComponentManager>(GameInstance))
-		{			
-			int32 EntryIndex = 0;
-			for (const FGameFeatureAbilitiesEntry& Entry : AbilitiesList)
-			{
-				if (!Entry.ActorClass.IsNull())
-				{
-					UGameFrameworkComponentManager::FExtensionHandlerDelegate AddAbilitiesDelegate = UGameFrameworkComponentManager::FExtensionHandlerDelegate::CreateUObject(
-						this, &UGameFeatureAction_AddAbilities::HandleActorExtension, EntryIndex, ChangeContext);
-					TSharedPtr<FComponentRequestHandle> ExtensionRequestHandle = ComponentMan->AddExtensionHandler(Entry.ActorClass, AddAbilitiesDelegate);
+		return;	
+	}
+	
+//	if ((GameInstance != nullptr) && (World != nullptr) && World->IsGameWorld())
+	const auto ComponentManager = UGameInstance::GetSubsystem<UGameFrameworkComponentManager>(GameInstance);
+	if(ComponentManager ==nullptr)
+	{
+		return;
+	}
+	
+	FPerContextData& ActiveData = ContextData.FindOrAdd(ChangeContext);
+	//if (UGameFrameworkComponentManager* ComponentMan = UGameInstance::GetSubsystem<UGameFrameworkComponentManager>(GameInstance))
+	int32 EntryIndex = 0;
+	for (const FGameFeatureAbilitiesEntry& Entry : AbilitiesList)
+	{
+		if (!Entry.ActorClass.IsNull())
+		{
+			UGameFrameworkComponentManager::FExtensionHandlerDelegate AddAbilitiesDelegate = UGameFrameworkComponentManager::FExtensionHandlerDelegate::CreateUObject(
+				this, &UGameFeatureAction_AddAbilities::HandleActorExtension, EntryIndex, ChangeContext);
+			TSharedPtr<FComponentRequestHandle> ExtensionRequestHandle = ComponentManager->AddExtensionHandler(Entry.ActorClass, AddAbilitiesDelegate);
 
-					ActiveData.ComponentRequests.Add(ExtensionRequestHandle);
-					EntryIndex++;
-				}
-			}
+			ActiveData.ComponentRequests.Add(ExtensionRequestHandle);
+			EntryIndex++;
 		}
 	}
 }
@@ -253,25 +263,33 @@ void UGameFeatureAction_AddAbilities::RemoveActorAbilities(AActor* Actor, FPerCo
 	}
 }
 
-UActorComponent* UGameFeatureAction_AddAbilities::FindOrAddComponentForActor(UClass* ComponentType, AActor* Actor, const FGameFeatureAbilitiesEntry& AbilitiesEntry, FPerContextData& ActiveData)
+UActorComponent* UGameFeatureAction_AddAbilities::FindOrAddComponentForActor(UClass* ComponentType, AActor* Actor, const FGameFeatureAbilitiesEntry& AbilitiesEntry, FPerContextData& ActiveData) const
 {
 	UActorComponent* Component = Actor->FindComponentByClass(ComponentType);
 	
-	bool bMakeComponentRequest = (Component == nullptr);
+	bool bNeedMakeComponentReq = (Component == nullptr);
+	
+	// 找到了组件，判断组件的创建方法
 	if (Component)
 	{
 		// Check to see if this component was created from a different `UGameFrameworkComponentManager` request.
+		// 检查这个组件是否是从不同的`UGameFrameworkComponentManager`请求创建的。
 		// `Native` is what `CreationMethod` defaults to for dynamically added components.
+		// `Native`是`CreationMethod`默认为动态添加组件的。
 		if (Component->CreationMethod == EComponentCreationMethod::Native)
 		{
 			// Attempt to tell the difference between a true native component and one created by the GameFrameworkComponent system.
+			// 尝试判断真正的native组件和由GameFrameworkComponent系统创建的组件之间的差异。
 			// If it is from the UGameFrameworkComponentManager, then we need to make another request (requests are ref counted).
-			UObject* ComponentArchetype = Component->GetArchetype();
-			bMakeComponentRequest = ComponentArchetype->HasAnyFlags(RF_ClassDefaultObject);
+			// 如果它是由UGameFrameworkComponentManager创建的，那么我们需要再次请求（请求是引用计数的）。
+			const UObject* ComponentArchetype = Component->GetArchetype();
+			bNeedMakeComponentReq = ComponentArchetype->HasAnyFlags(RF_ClassDefaultObject);
 		}
 	}
 
-	if (bMakeComponentRequest)
+	// 1. 通过传入的组件类型，未找到对应的组件
+	// 2. 传入的组件类型找到了对应组件，且这个组件是由UGameFrameworkComponentManager创建的
+	if (bNeedMakeComponentReq)
 	{
 		UWorld* World = Actor->GetWorld();
 		UGameInstance* GameInstance = World->GetGameInstance();
@@ -282,7 +300,8 @@ UActorComponent* UGameFeatureAction_AddAbilities::FindOrAddComponentForActor(UCl
 			ActiveData.ComponentRequests.Add(RequestHandle);
 		}
 
-		if (!Component)
+		// 只有未找到对应组件时才会走到这儿
+		if (Component == nullptr)
 		{
 			Component = Actor->FindComponentByClass(ComponentType);
 			ensureAlways(Component);
